@@ -1,0 +1,33 @@
+#root {
+  text-align: center;
+}
+.text-main-color {
+  color: #974fd0 !important;
+}
+
+.bg-main-color {
+  background-color: #974fd0 !important;
+}
+
+.border-main-color {
+  border-color: #974fd0 !important;
+}
+
+.mw-1024 {
+  width: 90%;
+  max-width: 1024px;
+}
+
+form input, form textarea {
+    outline: none;
+}
+
+form textarea {
+    resize: none;
+
+}
+
+form label {
+    top:-14px;
+    left: 15px;
+}
