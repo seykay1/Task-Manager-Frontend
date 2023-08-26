@@ -17,6 +17,15 @@ const MyTask = ({baseURL}) => {
     getData();
   }, []);
 
+  const deleteTask = async (id) => {
+    const res = await fetch (`${baseURL}/${id}`, {
+      method: "DELETE",
+    });
+    const data = await res.json();
+    console.log(data);
+    navigate(0)
+  };
+
   return (
     <div className="container">
       <div className="d-flex justify-content-between align-items-center py-4">
@@ -52,7 +61,11 @@ const MyTask = ({baseURL}) => {
                     {" "}
                     <img src={editIcon} alt="edit-icon" /> Edit
                   </Link>
-                  <button className="btn text-main-color border-main-color border-1 d-flex align-items-center gap-1">
+                  <button onClick={()=> {
+                    deleteTask(_id);
+                  }}
+                  
+                  className="btn text-main-color border-main-color border-1 d-flex align-items-center gap-1">
                     {" "}
                     <img src={deleteIcon} alt="" />
                     Delete
